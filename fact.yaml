@@ -1,0 +1,9 @@
+- name: Question Number 6
+  hosts: nodes
+  user: ansible
+  become: true
+  tasks:
+  - name: Copy fact in /etc/motd
+    copy:
+     content: "{{ ansible_hostname }} {{ ansible_enp0s3.ipv4.address }} {{ ansible_enp0s3.macaddress }} {{ ansible_processor_count }}"
+     dest: /etc/motd
