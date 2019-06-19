@@ -1,7 +1,6 @@
 - name: Question Number 6
-  hosts: nodes
-  user: ansible
-  become: true
+  hosts: all
+  user: root
   tasks:
   - name: Copy fact in /etc/motd
     copy:
